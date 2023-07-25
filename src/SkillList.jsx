@@ -1,4 +1,4 @@
-import SkillListItem from "./SkillListItem";
+import SkillListItem from "./SkillListItem/SkillListItem";
 
 export default function SkillList({ skills }) {
 
@@ -7,7 +7,6 @@ export default function SkillList({ skills }) {
   return (
 
     <ul>
-      {/* {skillsJsx} */}
         {skills.map((s, idx) => (
             <SkillListItem skill={s} key={idx} />
         ))} 

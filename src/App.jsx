@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import NewSkillForm from './NewSkillForm';
-import SkillList from './SkillList';
+import NewSkillForm from './NewSkillForm/NewSkillForm'
+import SkillList from './SkillList'
 
 export default function App() {
   const [skills, setSkills] = useState([
@@ -11,13 +11,20 @@ export default function App() {
     { name: "Python", level: 2 },
   ]);
 
+
+function addNewSkill(skillFromTheForm){
+console.log(skillFromTheForm);
+  setSkills([  skillFromTheForm,  ...skills])
+}
+
   return (
-    <div className="App">
+    <>
       <h1>React Dev Skills</h1>
+      
       <SkillList skills={skills} />
       <hr />
-      <NewSkillForm />
-    </div>
+      <NewSkillForm addNewSkill={addNewSkill} />
+    </>
    
   );
 }
